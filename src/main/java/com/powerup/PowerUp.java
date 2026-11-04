@@ -3,6 +3,9 @@ package com.powerup;
 import com.mojang.logging.LogUtils;
 import com.powerup.core.PowerUpPermissions;
 import com.powerup.registry.DeviceRegistry;
+import com.powerup.registry.PowerUpBlocks;
+import com.powerup.registry.PowerUpCreativeTabs;
+import com.powerup.registry.PowerUpItems;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -27,6 +30,9 @@ public class PowerUp {
     public PowerUp(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         DeviceRegistry.register(modEventBus);
+        PowerUpBlocks.register(modEventBus);
+        PowerUpItems.register(modEventBus);
+        PowerUpCreativeTabs.register(modEventBus);
         NeoForge.EVENT_BUS.addListener(PowerUpPermissions::registerNodes);
     }
 
