@@ -1,0 +1,36 @@
+# Mod metadata for Create: Power up!
+# Placeholders are expanded from gradle.properties by processResources (see build.gradle).
+# Do not write a dollar sign followed by a brace in comments: the expansion would try to evaluate it.
+modLoader="javafml" #mandatory
+loaderVersion="${loader_version_range}" #mandatory
+license="${mod_license}"
+
+[[mods]] #mandatory
+modId="${mod_id}" #mandatory
+version="${mod_version}" #mandatory
+displayName="${mod_name}" #mandatory
+authors="${mod_authors}"
+description='''${mod_description}'''
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[${neo_version},)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+# Create dependency: enable together with the Gradle dependency (see README "Enabling Create").
+# Create 1.21.1 itself declares: flywheel [1.0.0,2.0) (client), ponder [1.0.82,) -- from tag mc1.21.1-6.0.10.
+#[[dependencies.${mod_id}]]
+#    modId="create"
+#    type="required"
+#    versionRange="[6.0.10,)"
+#    ordering="AFTER"
+#    side="BOTH"
