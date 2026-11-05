@@ -49,6 +49,7 @@ public enum PowerMaterial {
     ETCHANT(Category.ELECTRONIC),
 
     // Chemicals
+
     CARBON_POWDER(Category.CHEMICAL),
     CLEANING_FLUID(Category.CHEMICAL),
 
